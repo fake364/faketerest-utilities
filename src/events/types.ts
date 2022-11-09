@@ -1,4 +1,5 @@
 import { SubscriptionPayload } from "./subscription/types";
+import PostCreatePayload from "./postCreate/types";
 
 export enum DATABASE_ACTION {
   INSERT = "INSERT"
@@ -14,7 +15,7 @@ export interface BaseEvent extends Readable, CreatedAt, EventType {}
 
 export type NotificationType = {
   key: string;
-  payload: SubscriptionPayload;
+  payload: SubscriptionPayload | PostCreatePayload;
 };
 
 export enum CLIENT_EVENTS {
