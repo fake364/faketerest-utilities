@@ -1,15 +1,25 @@
 import uniqWith from "lodash/uniqWith";
-import EVENT_TYPE, { NotificationType } from "./types";
+import EVENT_TYPE, {NotificationType} from "./types";
+import {SubscriptionPayload} from "./subscription/types";
+
+const bothHaveEventType = (
+  a: NotificationType["payload"],
+  b: NotificationType["payload"],
+  type: EVENT_TYPE
+) => a.eventType === type && b.eventType === type;
 
 export const filterDuplicateNotifications = (
   notifications: NotificationType[]
 ) => {
   return uniqWith(notifications, ({ payload: first }, { payload: second }) => {
-    if (
-      first.eventType === EVENT_TYPE.SUBSCRIPTION &&
-      second.eventType === EVENT_TYPE.SUBSCRIPTION
-    ) {
-      return first.fromId === second.fromId && first.toId === second.toId;
+    const compare = (type: EVENT_TYPE) =>
+      bothHaveEventType(first, second, type);
+    if (compare(EVENT_TYPE.SUBSCRIPTION)) {
+      const firstSub = first as SubscriptionPayload;
+      const secondSub = second as SubscriptionPayload;
+      return (
+        firstSub.fromId === secondSub.fromId && firstSub.toId === secondSub.toId
+      );
     } else {
       return false;
     }

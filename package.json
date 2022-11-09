@@ -1,6 +1,6 @@
 {
   "name": "faketerest-utilities",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Package for multiple faketerest repositories using same functionality",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
