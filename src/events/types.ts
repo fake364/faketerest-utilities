@@ -17,6 +17,12 @@ export type NotificationType = {
   payload: SubscriptionPayload;
 };
 
+export enum CLIENT_EVENTS {
+  COMMON_NOTIFICATION = "common_notification",
+  INIT_NOTIFICATIONS = "init-notifications",
+  READ_NOTIFICATIONS = "read-notifications"
+}
+
 enum EVENT_TYPE {
   SUBSCRIPTION = "SUBSCRIPTION",
   POST_CREATE = "POST_CREATE"
