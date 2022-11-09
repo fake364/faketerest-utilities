@@ -1,0 +1,27 @@
+{
+  "name": "faketerest-utilities",
+  "version": "1.0.0",
+  "description": "Package for multiple faketerest repositories using same functionality",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fake364",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.4",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.7.1",
+    "@types/lodash": "^4.14.188"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "files": [
+    "/dist"
+  ]
+}
