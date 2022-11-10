@@ -5,4 +5,5 @@ export interface PostCommentedPayload extends BaseEvent {
   fromLastname: string | null;
   fromUserId: number;
   postId: string;
+  text: string;
 }
