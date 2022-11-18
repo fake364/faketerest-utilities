@@ -22,7 +22,8 @@ export type NotificationType = {
 export enum CLIENT_EVENTS {
   COMMON_NOTIFICATION = "common_notification",
   INIT_NOTIFICATIONS = "init-notifications",
-  READ_NOTIFICATIONS = "read-notifications"
+  READ_NOTIFICATIONS = "read-notifications",
+  MESSAGE_NOTIFICATIONS = "message-notification"
 }
 
 enum EVENT_TYPE {
